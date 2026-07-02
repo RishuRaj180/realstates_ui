@@ -1,0 +1,27 @@
+nav {
+  background-color: #1e3a8a;
+  color: white;
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav h2 {
+  font-size: 28px;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+}
+
+nav ul li {
+  cursor: pointer;
+  font-size: 18px;
+}
+
+nav ul li:hover {
+  color: #facc15;
+}
