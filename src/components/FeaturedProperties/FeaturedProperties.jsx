@@ -11,7 +11,7 @@ function FeaturedProperties() {
         <div className="card">
           <h3>Luxury Villa</h3>
           <p>📍 Mumbai</p>
-          <p>💰 ₹2.5 Crore</p>
+          <p>💰 ₹4.5 Crore</p>
           <button>View Details</button>
         </div>
 
