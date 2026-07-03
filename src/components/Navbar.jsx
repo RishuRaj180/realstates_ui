@@ -1,17 +1,16 @@
+import { Link } from "react-router-dom";
 import "./Navbar.css";
 
 function Navbar() {
   return (
-    <nav>
-      <h2>Real Estate</h2>
+    <nav className="navbar">
+      <h1>Real Estate</h1>
 
       <ul>
-        <li>Home</li>
-        <li>Properties</li>
-        <li>About</li>
-        <li>Contact</li>
-        <li>Login</li>
-        <li>Sign Up</li>
+        <li><Link to="/home">Home</Link></li>
+        <li><Link to="/properties">Properties</Link></li>
+        <li><Link to="/about">About</Link></li>
+        <li><Link to="/contact">Contact</Link></li>
       </ul>
     </nav>
   );
