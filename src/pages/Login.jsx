@@ -27,9 +27,13 @@ function Login() {
 
       if (response.data.success) {
 
-        alert(response.data.message);
+    // Save login information
+    localStorage.setItem("isLoggedIn", "true");
+    localStorage.setItem("username", username);
 
-        navigate("/home");
+    // Go to Home page
+    navigate("/home");
+
 
       } else {
 

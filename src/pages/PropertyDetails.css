@@ -1,0 +1,67 @@
+.property-details {
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 30px;
+  display: flex;
+  gap: 50px;
+  align-items: flex-start;
+}
+
+.property-image {
+  width: 600px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.property-info {
+  flex: 1;
+}
+
+.property-info h1 {
+  color: #1e3a8a;
+  font-size: 45px;
+  margin-bottom: 20px;
+}
+
+.price {
+  font-size: 38px;
+  font-weight: bold;
+  color: green;
+  margin-bottom: 20px;
+}
+
+.details p {
+  font-size: 22px;
+  margin: 12px 0;
+}
+
+.description {
+  margin-top: 30px;
+}
+
+.description h2 {
+  color: #1e3a8a;
+  margin-bottom: 15px;
+}
+
+.description p {
+  font-size: 20px;
+  color: #555;
+  line-height: 1.8;
+}
+
+.contact-btn {
+  margin-top: 40px;
+  padding: 15px 35px;
+  background: #1e3a8a;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contact-btn:hover {
+  background: #163172;
+}

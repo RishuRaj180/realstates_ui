@@ -1,25 +1,23 @@
 import "./Home.css";
 import heroImage from "../assets/images/hero.jpg";
 import PropertyCard from "../components/PropertyCard";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 function Home() {
-  const properties = [
-    {
-      title: "Luxury Villa",
-      location: "Mumbai",
-      price: "₹2.5 Crore",
-    },
-    {
-      title: "Modern Apartment",
-      location: "Delhi",
-      price: "₹85 Lakh",
-    },
-    {
-      title: "Premium Bungalow",
-      location: "Bangalore",
-      price: "₹1.8 Crore",
-    },
-  ];
+
+  const [properties, setProperties] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("http://127.0.0.1:8000/api/properties/")
+      .then((response) => {
+        setProperties(response.data.properties);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
 
   return (
     <section className="home">
@@ -51,12 +49,18 @@ function Home() {
 
         <div className="property-list">
 
-          {properties.map((property, index) => (
+          {properties.slice(0, 3).map((property) => (
             <PropertyCard
-              key={index}
+              key={property.id}
+              id={property.id}
               title={property.title}
+              image={property.image}
               location={property.location}
               price={property.price}
+              property_type={property.property_type}
+              bedrooms={property.bedrooms}
+              bathrooms={property.bathrooms}
+              description={property.description}
             />
           ))}
 
