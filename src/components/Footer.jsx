@@ -1,4 +1,5 @@
 import "./Footer.css";
+import { Link } from "react-router-dom";
 
 function Footer() {
   return (
@@ -6,28 +7,48 @@ function Footer() {
 
       <div className="footer-container">
 
-        <div>
-          <h2>Real Estate</h2>
+        {/* Company */}
+
+        <div className="footer-section">
+
+          <h2>🏠 Real Estate</h2>
+
           <p>
-            Helping families find their dream homes with trust and quality.
+            Helping families find their dream homes with trust,
+            transparency and quality.
           </p>
+
         </div>
 
-        <div>
+        {/* Quick Links */}
+
+        <div className="footer-section">
+
           <h3>Quick Links</h3>
 
-          <p>Home</p>
-          <p>Properties</p>
-          <p>About</p>
-          <p>Contact</p>
+          <Link to="/home">Home</Link>
+          <Link to="/properties">Properties</Link>
+          <Link to="/about">About</Link>
+          <Link to="/contact">Contact</Link>
+
         </div>
 
-        <div>
+        {/* Contact */}
+
+        <div className="footer-section">
+
           <h3>Contact</h3>
 
           <p>📍 Delhi, India</p>
-          <p>📞 +91 8797405838</p>
-          <p>✉ rishuraj113099@gmail.com</p>
+
+          <a href="tel:+918797405838">
+            📞 +91 8797405838
+          </a>
+
+          <a href="mailto:rishuraj113099@gmail.com">
+            ✉️ rishuraj113099@gmail.com
+          </a>
+
         </div>
 
       </div>
@@ -35,7 +56,7 @@ function Footer() {
       <hr />
 
       <p className="copyright">
-        © 2026 Real Estate. All Rights Reserved.
+        © 2026 Real Estate | Designed & Developed by <strong>Rishu Raj</strong>
       </p>
 
     </footer>

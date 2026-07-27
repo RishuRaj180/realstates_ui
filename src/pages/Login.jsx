@@ -1,3 +1,4 @@
+import { toast } from "react-toastify";
 import axios from "axios";
 import "./Login.css";
 import { Link, useNavigate } from "react-router-dom";
@@ -6,14 +7,10 @@ import { useState } from "react";
 function Login() {
 
   const navigate = useNavigate();
-
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
-
   const handleLogin = async () => {
 
-    setError("");
 
     try {
 
@@ -27,23 +24,21 @@ function Login() {
 
       if (response.data.success) {
 
-    // Save login information
     localStorage.setItem("isLoggedIn", "true");
-    localStorage.setItem("username", username);
+localStorage.setItem("username", username);
 
-    // Go to Home page
-    navigate("/home");
+toast.success("Login Successful!");
 
-
+navigate("/home");
       } else {
 
-        setError(response.data.message);
+       toast.error(response.data.message);
 
       }
 
     } catch (error) {
 
-      setError("Server Error!");
+      toast.error("Server Error!");
 
       console.log(error);
 
@@ -73,11 +68,7 @@ function Login() {
           onChange={(e) => setPassword(e.target.value)}
         />
 
-        {error && (
-          <p style={{ color: "red" }}>
-            {error}
-          </p>
-        )}
+        
 
         <button onClick={handleLogin}>
           Login

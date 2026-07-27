@@ -1,42 +1,93 @@
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import axios from "axios";
+import LoadingSpinner from "../components/LoadingSpinner";
 import "./PropertyDetails.css";
 
 function PropertyDetails() {
+
+  const { id } = useParams();
+
+  const [property, setProperty] = useState(null);
+
+  useEffect(() => {
+    axios
+      .get(`http://127.0.0.1:8000/api/properties/${id}/`)
+      .then((response) => {
+        setProperty(response.data.property);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, [id]);
+
+  if (!property) {
+    return <LoadingSpinner />;
+  }
+
+  const handleContactAgent = () => {
+
+    const message =
+      `Hello,\n\n` +
+      `I am interested in the property "${property.title}".\n\n` +
+      `Property Location: ${property.location}\n` +
+      `Price: ₹${property.price}\n\n` +
+      `Could you please provide more details?\n\n` +
+      `Thank you.`;
+
+    window.open(
+      `https://wa.me/918797405838?text=${encodeURIComponent(message)}`,
+      "_blank"
+    );
+
+  };
+
   return (
     <div className="property-details">
 
       <img
-        src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6"
-        alt="Property"
+        src={property.image}
+        alt={property.title}
         className="property-image"
       />
 
       <div className="property-info">
 
-        <h1>Luxury Villa</h1>
+        <h1>{property.title}</h1>
 
         <p className="price">
-          ₹ 2,50,00,000
+          ₹ {Number(property.price).toLocaleString("en-IN")}
         </p>
 
         <div className="details">
-          <p><strong>Location:</strong> Delhi</p>
-          <p><strong>Type:</strong> Villa</p>
-          <p><strong>Bedrooms:</strong> 4</p>
-          <p><strong>Bathrooms:</strong> 3</p>
+          <p><strong>Location:</strong> {property.location}</p>
+          <p><strong>Type:</strong> {property.property_type}</p>
+          <p><strong>Bedrooms:</strong> {property.bedrooms}</p>
+          <p><strong>Bathrooms:</strong> {property.bathrooms}</p>
         </div>
 
         <div className="description">
           <h2>Description</h2>
-
-          <p>
-            Beautiful luxury villa with modern amenities,
-            swimming pool, garden and parking.
-          </p>
+          <p>{property.description}</p>
         </div>
 
-        <button className="contact-btn">
-          Contact Agent
-        </button>
+        <div className="contact-buttons">
+
+  <button
+    className="whatsapp-btn"
+    onClick={handleContactAgent}
+  >
+    💬 Contact on WhatsApp
+  </button>
+
+  <a
+    href={`mailto:rishuraj113099@gmail.com?subject=Property Inquiry - ${property.title}`}
+    className="email-btn"
+  >
+    📧 Email Agent
+  </a>
+
+</div>
 
       </div>
 

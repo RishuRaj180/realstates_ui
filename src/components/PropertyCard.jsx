@@ -15,42 +15,49 @@ function PropertyCard({
 
   const navigate = useNavigate();
 
+  // Format price in Indian style
+  const formattedPrice = Number(price).toLocaleString("en-IN");
+
   return (
     <div className="property-card">
 
       <img
         src={image}
         alt={title}
-        style={{
-          width: "100%",
-          height: "220px",
-          objectFit: "cover",
-          borderRadius: "10px",
-        }}
+        className="property-image"
       />
+
+      <span className="property-type-badge">
+        {property_type}
+      </span>
 
       <h3>{title}</h3>
 
-      <p><strong>Price:</strong> ₹ {price}</p>
+      <p className="price">
+        ₹ {formattedPrice}
+      </p>
 
-      <p><strong>Location:</strong> {location}</p>
+      <p>
+        <strong>📍 Location:</strong> {location}
+      </p>
 
-      <p><strong>Type:</strong> {property_type}</p>
+      <p>
+        <strong>🛏 Bedrooms:</strong> {bedrooms}
+      </p>
 
-      <p><strong>Bedrooms:</strong> {bedrooms}</p>
+      <p>
+        <strong>🚿 Bathrooms:</strong> {bathrooms}
+      </p>
 
-      <p><strong>Bathrooms:</strong> {bathrooms}</p>
-
-      <p>{description}</p>
+      <p className="description">
+        {description}
+      </p>
 
       <button
-  onClick={() => {
-    alert(`Property ID = ${id}`);
-    navigate(`/property/${id}`);
-  }}
->
-  View Details
-</button>
+        onClick={() => navigate(`/property/${id}`)}
+      >
+        View Details
+      </button>
 
     </div>
   );

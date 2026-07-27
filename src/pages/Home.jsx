@@ -2,9 +2,12 @@ import "./Home.css";
 import heroImage from "../assets/images/hero.jpg";
 import PropertyCard from "../components/PropertyCard";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 function Home() {
+
+  const navigate = useNavigate();
 
   const [properties, setProperties] = useState([]);
 
@@ -33,7 +36,9 @@ function Home() {
             Management System.
           </p>
 
-          <button>Explore Properties</button>
+          <button onClick={() => navigate("/properties")}>
+            Explore Properties
+          </button>
         </div>
 
         <div className="hero-image">

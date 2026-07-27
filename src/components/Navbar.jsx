@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import "./Navbar.css";
 
 function Navbar() {
@@ -19,17 +19,50 @@ function Navbar() {
       <h1>Real Estate</h1>
 
       <ul>
-        <li><Link to="/home">Home</Link></li>
-        <li><Link to="/properties">Properties</Link></li>
-        <li><Link to="/about">About</Link></li>
-        <li><Link to="/contact">Contact</Link></li>
 
-        <li>
-          <button onClick={handleLogout}>
-            Logout
-          </button>
-        </li>
-      </ul>
+  <li>
+    <NavLink to="/home">
+      Home
+    </NavLink>
+  </li>
+
+  <li>
+    <NavLink to="/properties">
+      Properties
+    </NavLink>
+  </li>
+
+  <li>
+    <NavLink to="/about">
+      About
+    </NavLink>
+  </li>
+
+  <li>
+    <NavLink to="/contact">
+      Contact
+    </NavLink>
+  </li>
+
+  <li>
+    <NavLink to="/profile">
+      Profile
+    </NavLink>
+  </li>
+
+  <li>
+  <NavLink to="/change-password">
+    Change Password
+  </NavLink>
+  </li>
+
+  <li>
+    <button onClick={handleLogout}>
+      Logout
+    </button>
+  </li>
+
+</ul>
 
     </nav>
   );

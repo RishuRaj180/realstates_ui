@@ -1,6 +1,15 @@
 import "./SearchFilter.css";
 
-function SearchFilter({ search, setSearch }) {
+function SearchFilter({
+  search,
+  setSearch,
+  location,
+  setLocation,
+  propertyType,
+  setPropertyType,
+  priceRange,
+  setPriceRange,
+}) {
   return (
     <div className="search-filter">
 
@@ -11,27 +20,39 @@ function SearchFilter({ search, setSearch }) {
         onChange={(e) => setSearch(e.target.value)}
       />
 
-      <select>
-        <option>All Locations</option>
-        <option>Delhi</option>
-        <option>Mumbai</option>
-        <option>Bangalore</option>
+      <select
+        value={location}
+        onChange={(e) => setLocation(e.target.value)}
+      >
+        <option value="">All Locations</option>
+        <option value="Delhi">Delhi</option>
+        <option value="Mumbai">Mumbai</option>
+        <option value="Bangalore">Bangalore</option>
       </select>
 
-      <select>
-        <option>All Types</option>
-        <option>House</option>
-        <option>Apartment</option>
-        <option>Villa</option>
-        <option>Land</option>
+      <select
+        value={propertyType}
+        onChange={(e) => setPropertyType(e.target.value)}
+      >
+        <option value="">All Types</option>
+        <option value="House">House</option>
+        <option value="Apartment">Apartment</option>
+        <option value="Villa">Villa</option>
+        <option value="Land">Land</option>
+        <option value="Bungalow">Bungalow</option>
+        <option value="Penthouse">Penthouse</option>
+        <option value="Farm House">Farm House</option>
       </select>
 
-      <select>
-        <option>Price Range</option>
-        <option>Below ₹50 Lakh</option>
-        <option>₹50L - ₹1Cr</option>
-        <option>₹1Cr - ₹3Cr</option>
-        <option>Above ₹3Cr</option>
+      <select
+        value={priceRange}
+        onChange={(e) => setPriceRange(e.target.value)}
+      >
+        <option value="">All Prices</option>
+        <option value="below50">Below ₹50 Lakh</option>
+        <option value="50to100">₹50 Lakh - ₹1 Crore</option>
+        <option value="100to200">₹1 Crore - ₹2 Crore</option>
+        <option value="above200">Above ₹2 Crore</option>
       </select>
 
       <button>

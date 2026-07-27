@@ -1,3 +1,6 @@
+import ChangePassword from "./pages/ChangePassword";
+import Profile from "./pages/Profile";
+import NotFound from "./pages/NotFound";
 import Footer from "./components/Footer";
 import { Routes, Route } from "react-router-dom";
 import PropertyDetails from "./pages/PropertyDetails";
@@ -71,6 +74,18 @@ function App() {
           }
         />
 
+        {/* Profile */}
+<Route
+  path="/profile"
+  element={
+    <ProtectedRoute>
+      <Navbar />
+      <Profile />
+      <Footer />
+    </ProtectedRoute>
+  }
+/>
+
         {/* Property Details */}
         <Route
           path="/property/:id"
@@ -82,6 +97,18 @@ function App() {
             </ProtectedRoute>
           }
         />
+
+        <Route
+    path="/change-password"
+    element={
+        <ProtectedRoute>
+            <Navbar />
+            <ChangePassword />
+            <Footer />
+        </ProtectedRoute>
+    }
+/>
+        <Route path="*" element={<NotFound />} />
 
       </Routes>
     </>

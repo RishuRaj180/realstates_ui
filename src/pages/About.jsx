@@ -4,7 +4,7 @@ function About() {
   return (
     <div className="about">
 
-      <h1>About Us</h1>
+      <h1>🏠 About Us</h1>
 
       <div className="about-section">
 
@@ -12,46 +12,49 @@ function About() {
 
         <p>
           Welcome to <strong>Real Estate</strong>, your trusted partner in
-          buying, selling and renting properties. We are committed to helping
-          people find their dream homes with verified listings, transparent
-          pricing and professional support.
+          buying, selling and renting properties. Our goal is to connect
+          buyers, sellers and investors through a modern, transparent and
+          reliable platform. We are committed to helping every customer find
+          the perfect property with confidence.
         </p>
 
       </div>
 
       <div className="about-section">
 
-        <h2>Our Mission</h2>
+        <h2>🎯 Our Mission</h2>
 
         <p>
-          Our mission is to simplify the property buying and selling process by
-          providing reliable listings, trusted agents and excellent customer
-          service.
+          Our mission is to simplify the real estate journey by providing
+          verified property listings, trusted agents, transparent pricing
+          and excellent customer service. We strive to make every property
+          transaction smooth, secure and hassle-free.
         </p>
 
       </div>
 
       <div className="about-section">
 
-        <h2>Our Vision</h2>
+        <h2>🚀 Our Vision</h2>
 
         <p>
-          We aim to become one of India's most trusted real estate platforms by
-          connecting buyers, sellers and investors through modern technology.
+          Our vision is to become one of India's most trusted real estate
+          platforms by using modern technology to create a smarter, faster
+          and more transparent property marketplace for everyone.
         </p>
 
       </div>
 
       <div className="about-section">
 
-        <h2>Why Choose Us?</h2>
+        <h2>⭐ Why Choose Us?</h2>
 
         <ul>
-          <li>✔ Verified Properties</li>
-          <li>✔ Trusted Real Estate Agents</li>
-          <li>✔ Best Market Prices</li>
-          <li>✔ Fast & Secure Deals</li>
-          <li>✔ 24/7 Customer Support</li>
+          <li>✔ Verified & Trusted Properties</li>
+          <li>✔ Experienced Real Estate Agents</li>
+          <li>✔ Competitive Market Prices</li>
+          <li>✔ Fast, Secure & Transparent Deals</li>
+          <li>✔ Dedicated Customer Support</li>
         </ul>
 
       </div>
@@ -75,7 +78,7 @@ function About() {
 
         <div className="stat-box">
           <h2>10+</h2>
-          <p>Years Experience</p>
+          <p>Years of Experience</p>
         </div>
 
       </div>
