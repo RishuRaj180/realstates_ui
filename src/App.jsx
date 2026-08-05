@@ -14,6 +14,8 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import BookVisit from "./pages/BookVisit";
+import MyBookings from "./pages/MyBookings";
 
 function App() {
   return (
@@ -107,6 +109,24 @@ function App() {
             <Footer />
         </ProtectedRoute>
     }
+/>
+
+<Route
+  path="/book-visit/:id"
+  element={
+    <ProtectedRoute>
+      <BookVisit />
+    </ProtectedRoute>
+  }
+/>
+
+<Route
+  path="/my-bookings"
+  element={
+    <ProtectedRoute>
+      <MyBookings />
+    </ProtectedRoute>
+  }
 />
         <Route path="*" element={<NotFound />} />
 

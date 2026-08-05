@@ -8,14 +8,14 @@ import "./Properties.css";
 function Properties() {
 
   const [properties, setProperties] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   const [search, setSearch] = useState("");
   const [location, setLocation] = useState("");
   const [propertyType, setPropertyType] = useState("");
   const [priceRange, setPriceRange] = useState("");
 
-  useEffect(() => {
+  const fetchProperties = () => {
 
     setLoading(true);
 
@@ -33,11 +33,15 @@ function Properties() {
         setLoading(false);
       });
 
-  }, [search, location, propertyType, priceRange]);
+  };
 
-  if (loading) {
-    return <LoadingSpinner />;
-  }
+  useEffect(() => {
+    fetchProperties();
+  }, []);
+
+  useEffect(() => {
+    fetchProperties();
+  }, [location, propertyType, priceRange]);
 
   return (
     <div className="properties">
@@ -53,9 +57,14 @@ function Properties() {
         setPropertyType={setPropertyType}
         priceRange={priceRange}
         setPriceRange={setPriceRange}
+        onSearch={fetchProperties}
       />
 
-      {properties.length === 0 ? (
+      {loading ? (
+
+        <LoadingSpinner />
+
+      ) : properties.length === 0 ? (
 
         <div style={{ textAlign: "center", marginTop: "60px" }}>
           <h2>😔 No Properties Found</h2>

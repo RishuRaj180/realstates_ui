@@ -1,0 +1,54 @@
+.book-visit-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+    background: #f5f5f5;
+    padding: 20px;
+}
+
+.book-visit-card {
+    width: 100%;
+    max-width: 600px;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.book-visit-card h1 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.book-visit-card input,
+.book-visit-card textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+    box-sizing: border-box;
+}
+
+.book-visit-card textarea {
+    resize: vertical;
+}
+
+.book-visit-card button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background-color: #2563eb;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.book-visit-card button:hover {
+    background-color: #1d4ed8;
+}

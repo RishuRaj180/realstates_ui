@@ -9,6 +9,7 @@ function SearchFilter({
   setPropertyType,
   priceRange,
   setPriceRange,
+  onSearch,
 }) {
   return (
     <div className="search-filter">
@@ -55,8 +56,8 @@ function SearchFilter({
         <option value="above200">Above ₹2 Crore</option>
       </select>
 
-      <button>
-        Search
+      <button onClick={onSearch}>
+      Search
       </button>
 
     </div>

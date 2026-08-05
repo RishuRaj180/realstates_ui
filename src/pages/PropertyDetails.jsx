@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import LoadingSpinner from "../components/LoadingSpinner";
 import "./PropertyDetails.css";
@@ -7,6 +7,7 @@ import "./PropertyDetails.css";
 function PropertyDetails() {
 
   const { id } = useParams();
+  const navigate = useNavigate();
 
   const [property, setProperty] = useState(null);
 
@@ -41,6 +42,9 @@ function PropertyDetails() {
     );
 
   };
+  const handleBookVisit = () => {
+  navigate(`/book-visit/${property.id}`);
+  };
 
   return (
     <div className="property-details">
@@ -72,6 +76,13 @@ function PropertyDetails() {
         </div>
 
         <div className="contact-buttons">
+
+          <button
+  className="book-visit-btn"
+  onClick={handleBookVisit}
+>
+  📅 Book Property Visit
+</button>
 
   <button
     className="whatsapp-btn"
